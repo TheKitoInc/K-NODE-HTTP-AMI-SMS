@@ -12,4 +12,4 @@ ID_IMAGE=$(docker build -q .)
 echo "Image built with ID: $ID_IMAGE"
 
 # Run the container
-docker run --rm -it -p 3571:3000 $ID_IMAGE
+docker run --rm -p 3571:3000 $ID_IMAGE
