@@ -28,6 +28,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: ⬇️ Pull latest changes to avoid conflicts
+        run: |
+          git fetch
+          git pull
+
       - name: ✨ Initialize package.json if not exists
         run: |
           if [ ! -f package.json ]; then
@@ -56,11 +61,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: ⬇️ Pull latest changes to avoid conflicts
-        run: |
-          git fetch
-          git pull
 
       - name: 📤 Commit changes if needed
         run: |
