@@ -1,6 +1,6 @@
 {
   "name": "k-node-http-ami-sms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HTTP Service to send SMS using AMI",
   "main": "index.js",
   "scripts": {
