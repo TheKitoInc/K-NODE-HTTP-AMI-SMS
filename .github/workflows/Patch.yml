@@ -57,18 +57,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: ⬇️ Pull latest changes to avoid conflicts
-        run: |
-          git fetch
-          git pull
-
       - name: 📤 Commit changes if needed
         run: |
           git add .
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update version"
+            git commit -m "Apply formatting ESLint"
+            git pull
             git push
           fi
         env:
