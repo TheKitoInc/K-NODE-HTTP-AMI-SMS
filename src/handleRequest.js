@@ -19,14 +19,6 @@ export default async function handleRequest(req) {
 
   if (!body.message) throw new Error('Missing message message');
 
-  const result = await AMI.connectAndSendSMS(
-    body.host,
-    body.port,
-    body.user,
-    body.password,
-    body.channel,
-    body.number,
-    body.message
-  );
+  const result = await AMI.connectAndSendSMS(body.host, body.port, body.user, body.password, body.channel, body.number, body.message);
   return result;
 }

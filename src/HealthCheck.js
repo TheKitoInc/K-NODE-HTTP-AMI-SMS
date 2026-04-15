@@ -14,9 +14,7 @@ export default function (url = null, interval = null) {
   }
 
   if (pingUrl && pingSeconds) {
-    console.log(
-      `Health check configured: ${pingUrl} every ${pingSeconds} seconds`
-    );
+    console.log(`Health check configured: ${pingUrl} every ${pingSeconds} seconds`);
     ping();
     setInterval(ping, pingSeconds * 1000);
   } else {
