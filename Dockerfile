@@ -36,6 +36,9 @@ WORKDIR /app
 # Copy bundled app
 COPY --from=builder /app/dist/index.js .
 
+# Touch .env if not exists to avoid runtime errors
+RUN touch .env
+
 # Security
 RUN useradd -m appuser
 USER appuser
@@ -43,4 +46,4 @@ USER appuser
 # Expose the port your app listens on
 EXPOSE 3000
 
-CMD ["node", "--env-file=.env", "app.js"]
+CMD ["node", "--env-file=.env", "index.js"]
