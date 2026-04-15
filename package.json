@@ -1,6 +1,6 @@
 {
   "name": "k-node-http-ami-sms",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "HTTP Service to send SMS using AMI",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^10.2.0"
+  }
 }
