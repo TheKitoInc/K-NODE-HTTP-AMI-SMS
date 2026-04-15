@@ -40,6 +40,7 @@ COPY --from=builder /app/dist/index.js .
 RUN useradd -m appuser
 USER appuser
 
+# Expose the port your app listens on
 EXPOSE 3000
 
 CMD ["node", "--env-file=.env", "app.js"]
