@@ -1,5 +1,3 @@
-
-
 import HealthCheck from './HealthCheck.js';
 HealthCheck();
 
