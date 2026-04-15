@@ -1,0 +1,27 @@
+# Stage 1: build
+FROM node:24-slim AS builder
+
+# Install esbuild globally (no package.json scripts needed)
+RUN npm install -g esbuild
+
+WORKDIR /app
+
+# Copy package.json and install esbuild globally
+COPY package.json .
+
+# Install dependencies (if you have any, otherwise this can be skipped)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Bundle app directly with esbuild
+RUN esbuild src/index.js \
+    --bundle \
+    --platform=node \
+    --target=node24 \
+    --outfile=dist/index.js \
+    --minify \
+    --external:sharp \
+    --external:bcrypt \
+    --external:sqlite3
