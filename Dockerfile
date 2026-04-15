@@ -29,3 +29,17 @@ RUN esbuild src/index.js \
 
 # Stage 2: runtime
 FROM node:24-slim
+
+# Create and change to the app directory
+WORKDIR /app
+
+# Copy bundled app
+COPY --from=builder /app/dist/index.js .
+
+# Security
+RUN useradd -m appuser
+USER appuser
+
+EXPOSE 3000
+
+CMD ["node", "--env-file=.env", "app.js"]
