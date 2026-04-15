@@ -1,5 +1,5 @@
-// Kito Simple HealthCheck 
-// This module periodically sends a request to a specified URL to notify that the application is alive. 
+// Kito Simple HealthCheck
+// This module periodically sends a request to a specified URL to notify that the application is alive.
 // This can be used by external monitoring services to check the health of the application.
 // Like https://healthchecks.io/
 
@@ -14,7 +14,9 @@ export default function (url = null, interval = null) {
   }
 
   if (pingUrl && pingSeconds) {
-    console.log(`Health check configured: ${pingUrl} every ${pingSeconds} seconds`);
+    console.log(
+      `Health check configured: ${pingUrl} every ${pingSeconds} seconds`
+    );
     ping();
     setInterval(ping, pingSeconds * 1000);
   } else {

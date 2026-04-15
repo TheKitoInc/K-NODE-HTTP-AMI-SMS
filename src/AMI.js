@@ -129,7 +129,15 @@ async function _sendSMS(channel, number, message) {
   }
 }
 
-export async function connectAndSendSMS(HOST, PORT, USER, SECRET, channel, number, message) {
+export async function connectAndSendSMS(
+  HOST,
+  PORT,
+  USER,
+  SECRET,
+  channel,
+  number,
+  message
+) {
   const t0 = Date.now();
 
   const connected = await connect(HOST, PORT, USER, SECRET);
