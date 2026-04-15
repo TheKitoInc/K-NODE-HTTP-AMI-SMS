@@ -4,6 +4,7 @@ FROM node:24-slim AS builder
 # Install esbuild globally (no package.json scripts needed)
 RUN npm install -g esbuild
 
+# Create and change to the app directory
 WORKDIR /app
 
 # Copy package.json and install esbuild globally
