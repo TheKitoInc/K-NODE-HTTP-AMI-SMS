@@ -69,6 +69,7 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Apply formatting ESLint"
+            git pull
             git push
           fi
         env:
