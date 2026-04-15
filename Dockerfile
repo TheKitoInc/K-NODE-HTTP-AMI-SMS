@@ -26,3 +26,6 @@ RUN esbuild src/index.js \
     --external:sharp \
     --external:bcrypt \
     --external:sqlite3
+
+# Stage 2: runtime
+FROM node:24-slim
