@@ -4,7 +4,7 @@ import parseGSMMessage from './parseGSMMessage.js';
 
 let socket = null;
 let dataBuff = '';
-let messages = [];
+const messages = [];
 let lines = {};
 
 function sendMessage(data) {
@@ -34,7 +34,7 @@ function parseInput(chunk) {
         messages.push(lines);
         lines = {};
       } else {
-        let parts = line.split(':', 2);
+        const parts = line.split(':', 2);
         if (parts.length === 2) {
           const key = parts[0].trim().toLowerCase();
           const value = parts[1].trim().toLowerCase();
