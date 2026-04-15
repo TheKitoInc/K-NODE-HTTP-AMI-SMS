@@ -28,6 +28,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: ⬇️ Pull latest changes to avoid conflicts
+        run: |
+          git fetch
+          git pull
+
       - name: ✨ Initialize package.json if not exists
         run: |
           if [ ! -f package.json ]; then
