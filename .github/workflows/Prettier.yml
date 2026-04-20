@@ -73,7 +73,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Apply formatting ESLint"
+            git commit -m "Apply formatting Prettier"
             git pull
             git push
           fi
